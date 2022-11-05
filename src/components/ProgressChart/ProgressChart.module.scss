@@ -1,0 +1,13 @@
+.ProgressContainer {
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: space-between;
+  .LinearProgress {
+    flex: 20;
+  }
+  .ProgressPercentage {
+    flex: 1;
+    color: #737373;
+  }
+}

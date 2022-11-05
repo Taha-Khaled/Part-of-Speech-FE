@@ -1,0 +1,17 @@
+.Questions {
+  background-color: #e1ecff;
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  .QuestionNum {
+    padding: 25px 10px 10px;
+    text-align: left;
+    color: #737373;
+    font-weight: 300;
+  }
+  .CompletionMessage {
+    color: #737373;
+  }
+}

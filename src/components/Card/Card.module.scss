@@ -1,0 +1,22 @@
+.CardContainer {
+  background-color: #348ef6;
+  padding: 50px;
+  border-radius: 10px;
+
+  .WordCard {
+    border-radius: 10px;
+    background-color: white;
+    color: #737373;
+    font-size: 40px;
+    font-weight: 600;
+    padding: 50px;
+  }
+  .RankCard {
+    border-radius: 10px;
+    background-color: white;
+    color: #737373;
+    font-size: 40px;
+    font-weight: 600;
+    padding: 50px;
+  }
+}

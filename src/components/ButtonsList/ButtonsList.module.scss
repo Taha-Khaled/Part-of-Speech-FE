@@ -1,0 +1,22 @@
+.ButtonsList {
+  background-color: #348ef6;
+  border-radius: 10px;
+  padding: 25px 50px;
+  display: flex;
+  gap: 150px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  .Button {
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #327feb;
+    padding: 25px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      background-color: #0b5fd8;
+    }
+  }
+}
