@@ -45,7 +45,7 @@ const Questions: FunctionComponent<props> = () => {
       });
     } else {
       setNotification({
-        title: "❌ Wrong Answer !",
+        title: "incorrect ❌",
         show: true,
         isError: true,
       });
