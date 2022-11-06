@@ -5,7 +5,8 @@ import Loader from "../Loader/Loader";
 import styles from "./Questions.module.scss";
 import Card from "../Card/Card";
 import { getRank, getWords } from "../../api";
-import { TRanks, TWords } from "../../types";
+import { TNotification, TRanks, TWords } from "../../types";
+import Notification from "../Notification/Notification";
 
 interface props {}
 
@@ -17,6 +18,10 @@ const Questions: FunctionComponent<props> = () => {
   const [words, setWords] = useState<TWords[]>([]);
   const [score, setScore] = useState<number>(0);
   const [rank, setRank] = useState<string>("calculating...");
+  const [notification, setNotification] = useState<TNotification>({
+    title: "",
+    show: false,
+  });
 
   useEffect(() => {
     showQuestions
@@ -32,7 +37,19 @@ const Questions: FunctionComponent<props> = () => {
 
   const handelSelectedSolution = (value: string) => {
     //check if the answer is right
-    value == words[questionNumber - 1].pos && setScore(score + 10);
+    if (value == words[questionNumber - 1].pos) {
+      setScore(score + 10);
+      setNotification({
+        title: "Correct 👏",
+        show: true,
+      });
+    } else {
+      setNotification({
+        title: "❌ Wrong Answer !",
+        show: true,
+        isError: true,
+      });
+    }
     //handel which section to show
     questionNumber == 10
       ? setShowQuestions(false)
@@ -47,8 +64,15 @@ const Questions: FunctionComponent<props> = () => {
     setQuestionNumber(1);
     setShowQuestions(true);
   };
+
   return (
     <div className={styles.Questions}>
+      <Notification
+        {...notification}
+        setShow={(show: boolean) => {
+          setNotification((old: TNotification) => ({ ...old, show }));
+        }}
+      />
       {words.length == 0 ? (
         //if no words so it's fetching so we need UI to tell the user that our data is loading
         <Loader />

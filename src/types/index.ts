@@ -12,3 +12,8 @@ export interface TRanks {
 export interface TRankBody {
   score: number;
 }
+export interface TNotification {
+  title: string;
+  show: boolean;
+  isError?: boolean;
+}

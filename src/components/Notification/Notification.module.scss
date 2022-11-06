@@ -1,0 +1,30 @@
+.Notification {
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  width: max-content;
+  padding: 0 10px 10px;
+  background-color: #34d399;
+  z-index: 119;
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.4s;
+  min-width: 260px;
+  transform: translateX(100%) scale(0.9);
+  opacity: 0;
+  &[data-show='true'] {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  &[data-error='true'] {
+    background-color: #f87171;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: 0;
+    font-size: 13px;
+  }
+}

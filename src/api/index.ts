@@ -22,6 +22,7 @@ export const getRank = async (body: TRankBody): Promise<TRanks> => {
       ...body,
     }),
   });
+
   const data: TRanks = await response.json();
   return data;
 };
